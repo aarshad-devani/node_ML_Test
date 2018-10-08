@@ -17,18 +17,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(async function (req, res, next) {
-    //Enabling CORS
-    try {
-        await next();
-    } catch (err) {
-        res.status(500).send({
-            success: false,
-            message: "Server error"
-        });
-    }
-});
-
 app.get("/", (req, res) => {
     res.status(200).send("Hi from Aarshad, Server successfully running")
 })
